@@ -22,8 +22,30 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Build with Maven
-      run: mvn clean package
+    - name: Build user-service
+      run: |
+        cd user-service
+        mvn clean package
+
+    - name: Build order-service
+      run: |
+        cd order-service
+        mvn clean package
+
+    - name: Build product-service
+      run: |
+        cd product-service
+        mvn clean package
+
+    - name: Build inventory-service
+      run: |
+        cd inventory-service
+        mvn clean package
+
+    - name: Build payment-service
+      run: |
+        cd payment-service
+        mvn clean package
 
   docker-build:
     runs-on: ubuntu-latest
